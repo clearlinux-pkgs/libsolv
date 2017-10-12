@@ -1,4 +1,5 @@
 libc.so.6
 libdb-5.3.so
 libexpat.so.1
+liblzma.so.5
 libz.so.1
