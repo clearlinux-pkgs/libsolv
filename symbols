@@ -336,6 +336,7 @@ libsolv.so.0:solver_findproblemrule
 libsolv.so.0:solver_free
 libsolv.so.0:solver_freedupmaps
 libsolv.so.0:solver_get_alternative
+libsolv.so.0:solver_get_cleandeps
 libsolv.so.0:solver_get_decisionblock
 libsolv.so.0:solver_get_decisionlevel
 libsolv.so.0:solver_get_decisionqueue
