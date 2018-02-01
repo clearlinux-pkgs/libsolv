@@ -1,5 +1,6 @@
 libsolv.so.0:SOLV_1.0
 libsolv.so.0:SOLV_1.1
+libsolv.so.0:SOLV_1.2
 libsolv.so.0:dataiterator_clonepos
 libsolv.so.0:dataiterator_entersub
 libsolv.so.0:dataiterator_free
@@ -32,6 +33,7 @@ libsolv.so.0:map_free
 libsolv.so.0:map_grow
 libsolv.so.0:map_init
 libsolv.so.0:map_init_clone
+libsolv.so.0:map_invertall
 libsolv.so.0:map_or
 libsolv.so.0:map_subtract
 libsolv.so.0:policy_filter_unwanted
@@ -101,6 +103,7 @@ libsolv.so.0:pool_set_flag
 libsolv.so.0:pool_set_installed
 libsolv.so.0:pool_set_languages
 libsolv.so.0:pool_set_rootdir
+libsolv.so.0:pool_set_whatprovides
 libsolv.so.0:pool_setarch
 libsolv.so.0:pool_setarchpolicy
 libsolv.so.0:pool_setdebugcallback
@@ -251,6 +254,7 @@ libsolv.so.0:selection_make
 libsolv.so.0:selection_make_matchdepid
 libsolv.so.0:selection_make_matchdeps
 libsolv.so.0:selection_solvables
+libsolv.so.0:selection_subtract
 libsolv.so.0:solv_bin2hex
 libsolv.so.0:solv_calloc
 libsolv.so.0:solv_chksum_add
@@ -329,8 +333,6 @@ libsolv.so.0:solver_create_state_maps
 libsolv.so.0:solver_create_transaction
 libsolv.so.0:solver_describe_decision
 libsolv.so.0:solver_describe_weakdep_decision
-libsolv.so.0:solver_disableproblem
-libsolv.so.0:solver_enableproblem
 libsolv.so.0:solver_findallproblemrules
 libsolv.so.0:solver_findproblemrule
 libsolv.so.0:solver_free
