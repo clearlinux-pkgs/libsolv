@@ -2,6 +2,19 @@
 This file contains the major changes between
 libsolv versions:
 
+Version 0.6.34
+- new features:
+  * also look at suggests for package ordering
+
+Version 0.6.33
+- new features:
+  * new Selection.clone() method in the bindings
+  * new pool.parserpmrichdep() method in the bindings
+
+Version 0.6.32
+- fixed bug that could make fileconflict detection very slow
+  in some cases
+
 Version 0.6.31
 - new configuration options:
   * ENABLE_RPMDB_LIBRPM: use librpm to read the package
