@@ -4,7 +4,7 @@
 #
 Name     : libsolv
 Version  : 0.6.31
-Release  : 9
+Release  : 10
 URL      : https://github.com/openSUSE/libsolv/archive/0.6.31.tar.gz
 Source0  : https://github.com/openSUSE/libsolv/archive/0.6.31.tar.gz
 Summary  : Library for solving packages
