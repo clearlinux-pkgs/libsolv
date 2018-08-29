@@ -1,6 +1,7 @@
 libsolv.so.0:SOLV_1.0
 libsolv.so.0:SOLV_1.1
 libsolv.so.0:SOLV_1.2
+libsolv.so.0:SOLV_1.3
 libsolv.so.0:dataiterator_clonepos
 libsolv.so.0:dataiterator_entersub
 libsolv.so.0:dataiterator_free
@@ -231,6 +232,7 @@ libsolv.so.0:repodata_set_constantid
 libsolv.so.0:repodata_set_deltalocation
 libsolv.so.0:repodata_set_id
 libsolv.so.0:repodata_set_idarray
+libsolv.so.0:repodata_set_kv
 libsolv.so.0:repodata_set_location
 libsolv.so.0:repodata_set_num
 libsolv.so.0:repodata_set_poolstr
