@@ -432,6 +432,7 @@ libsolvext.so.0:repo_add_rpmmd
 libsolvext.so.0:repo_add_updateinfoxml
 libsolvext.so.0:rpm_byfp
 libsolvext.so.0:rpm_byrpmdbid
+libsolvext.so.0:rpm_byrpmh
 libsolvext.so.0:rpm_installedrpmdbids
 libsolvext.so.0:rpm_iterate_filelist
 libsolvext.so.0:rpm_query

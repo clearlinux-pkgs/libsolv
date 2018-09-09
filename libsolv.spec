@@ -4,7 +4,7 @@
 #
 Name     : libsolv
 Version  : 0.6.35
-Release  : 13
+Release  : 14
 URL      : https://github.com/openSUSE/libsolv/archive/0.6.35.tar.gz
 Source0  : https://github.com/openSUSE/libsolv/archive/0.6.35.tar.gz
 Summary  : Library for solving packages
@@ -92,15 +92,21 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1535565620
+export SOURCE_DATE_EPOCH=1536521561
 mkdir -p clr-build
 pushd clr-build
-%cmake .. -DENABLE_COMPLEX_DEPS=YES -DENABLE_RPMDB=YES -DENABLE_RPMMD=YES -DENABLE_LZMA_COMPRESSION=yes
+%cmake .. -DENABLE_COMPLEX_DEPS=YES \
+-DENABLE_RPMDB=YES \
+-DENABLE_RPMDB_BYRPMHEADER=YES \
+-DENABLE_RPMDB_LIBRPM=YES \
+-DENABLE_RPMPKG_LIBRPM=YES \
+-DENABLE_RPMMD=YES \
+-DENABLE_LZMA_COMPRESSION=yes
 make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1535565620
+export SOURCE_DATE_EPOCH=1536521561
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/doc/libsolv
 cp LICENSE.BSD %{buildroot}/usr/share/doc/libsolv/LICENSE.BSD
