@@ -2,6 +2,47 @@
 This file contains the major changes between
 libsolv versions:
 
+Version 0.7.3
+- selected bug fixes:
+  * fixed a couple of null pointer derefs and potential memory
+    leaks
+  * made disfavoring recommended packages work if strong recommends
+    is enabled
+  * no longer disable infarch rules when they don't conflict with
+    the job
+- new features:
+  * do favor evaluation before pruning allowing to (dis)favor
+    specific package versions
+
+Version 0.7.2
+- bug fixes:
+  * do not autouninstall packages because of forcebest updates
+- new features:
+  * support rpm's new '^' version separator
+  * support set/get_considered_list in bindings
+  * new experimental SOLVER_FLAG_ONLY_NAMESPACE_RECOMMENDED flag
+
+Version 0.7.1
+- fix nasty off-by-one error in repo_write
+
+Version 0.7.0
+- soname bump to "1"
+- incompatible API changes:
+  * bindings: Selection.flags is now an attribute
+  * repodata_lookup_num now works like the other lookup_num functions
+- new functions:
+  * selection_make_matchsolvable
+  * selection_make_matchsolvablelist
+  * pool_whatmatchessolvable
+  * repodata_search_arrayelement
+  * repodata_lookup_kv_uninternalized
+  * repodata_search_uninternalized
+  * repodata_translate_dir
+- new repowriter interface to write solv files allowing better
+  control over what gets written
+- support for filtered file lists with a custom filter
+- dropped support of (since a long time unused) REPOKEY_TYPE_U32
+
 Version 0.6.35
 - new configuration options:
   * ENABLE_ZSTD_COMPRESSION: support zstd compression
