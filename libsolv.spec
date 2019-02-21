@@ -16,6 +16,7 @@ Requires: libsolv-lib = %{version}-%{release}
 Requires: libsolv-license = %{version}-%{release}
 Requires: libsolv-man = %{version}-%{release}
 BuildRequires : buildreq-cmake
+BuildRequires : pkg-config
 BuildRequires : pkgconfig(expat)
 BuildRequires : pkgconfig(liblzma)
 BuildRequires : pkgconfig(rpm)
@@ -91,7 +92,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552944735
+export SOURCE_DATE_EPOCH=1552945585
 mkdir -p clr-build
 pushd clr-build
 export LDFLAGS="${LDFLAGS} -fno-lto"
@@ -107,7 +108,7 @@ make  %{?_smp_mflags} VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1552944735
+export SOURCE_DATE_EPOCH=1552945585
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libsolv
 cp LICENSE.BSD %{buildroot}/usr/share/package-licenses/libsolv/LICENSE.BSD
