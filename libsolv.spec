@@ -4,19 +4,18 @@
 #
 Name     : libsolv
 Version  : 0.6.35
-Release  : 14
+Release  : 15
 URL      : https://github.com/openSUSE/libsolv/archive/0.6.35.tar.gz
 Source0  : https://github.com/openSUSE/libsolv/archive/0.6.35.tar.gz
-Summary  : Library for solving packages
+Summary  : Library for solving packages and reading repositories
 Group    : Development/Tools
 License  : BSD-3-Clause
-Requires: libsolv-bin
-Requires: libsolv-lib
-Requires: libsolv-data
-Requires: libsolv-license
-Requires: libsolv-man
+Requires: libsolv-bin = %{version}-%{release}
+Requires: libsolv-data = %{version}-%{release}
+Requires: libsolv-lib = %{version}-%{release}
+Requires: libsolv-license = %{version}-%{release}
+Requires: libsolv-man = %{version}-%{release}
 BuildRequires : buildreq-cmake
-BuildRequires : db-dev
 BuildRequires : pkgconfig(expat)
 BuildRequires : pkgconfig(liblzma)
 BuildRequires : pkgconfig(rpm)
@@ -30,9 +29,8 @@ algorithm.
 %package bin
 Summary: bin components for the libsolv package.
 Group: Binaries
-Requires: libsolv-data
-Requires: libsolv-license
-Requires: libsolv-man
+Requires: libsolv-data = %{version}-%{release}
+Requires: libsolv-license = %{version}-%{release}
 
 %description bin
 bin components for the libsolv package.
@@ -49,10 +47,12 @@ data components for the libsolv package.
 %package dev
 Summary: dev components for the libsolv package.
 Group: Development
-Requires: libsolv-lib
-Requires: libsolv-bin
-Requires: libsolv-data
-Provides: libsolv-devel
+Requires: libsolv-lib = %{version}-%{release}
+Requires: libsolv-bin = %{version}-%{release}
+Requires: libsolv-data = %{version}-%{release}
+Requires: libsolv-man = %{version}-%{release}
+Provides: libsolv-devel = %{version}-%{release}
+Requires: libsolv = %{version}-%{release}
 
 %description dev
 dev components for the libsolv package.
@@ -61,8 +61,8 @@ dev components for the libsolv package.
 %package lib
 Summary: lib components for the libsolv package.
 Group: Libraries
-Requires: libsolv-data
-Requires: libsolv-license
+Requires: libsolv-data = %{version}-%{release}
+Requires: libsolv-license = %{version}-%{release}
 
 %description lib
 lib components for the libsolv package.
@@ -92,7 +92,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1536521561
+export SOURCE_DATE_EPOCH=1551155087
 mkdir -p clr-build
 pushd clr-build
 %cmake .. -DENABLE_COMPLEX_DEPS=YES \
@@ -106,10 +106,10 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1536521561
+export SOURCE_DATE_EPOCH=1551155087
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/libsolv
-cp LICENSE.BSD %{buildroot}/usr/share/doc/libsolv/LICENSE.BSD
+mkdir -p %{buildroot}/usr/share/package-licenses/libsolv
+cp LICENSE.BSD %{buildroot}/usr/share/package-licenses/libsolv/LICENSE.BSD
 pushd clr-build
 %make_install
 popd
@@ -191,11 +191,11 @@ popd
 /usr/lib64/libsolvext.so.0
 
 %files license
-%defattr(-,root,root,-)
-/usr/share/doc/libsolv/LICENSE.BSD
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/libsolv/LICENSE.BSD
 
 %files man
-%defattr(-,root,root,-)
+%defattr(0644,root,root,0755)
 /usr/share/man/man1/deltainfoxml2solv.1
 /usr/share/man/man1/dumpsolv.1
 /usr/share/man/man1/installcheck.1
