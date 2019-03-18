@@ -4,10 +4,10 @@
 #
 Name     : libsolv
 Version  : 0.6.35
-Release  : 15
+Release  : 16
 URL      : https://github.com/openSUSE/libsolv/archive/0.6.35.tar.gz
 Source0  : https://github.com/openSUSE/libsolv/archive/0.6.35.tar.gz
-Summary  : Library for solving packages and reading repositories
+Summary  : Library for solving packages
 Group    : Development/Tools
 License  : BSD-3-Clause
 Requires: libsolv-bin = %{version}-%{release}
@@ -19,7 +19,6 @@ BuildRequires : buildreq-cmake
 BuildRequires : pkgconfig(expat)
 BuildRequires : pkgconfig(liblzma)
 BuildRequires : pkgconfig(rpm)
-BuildRequires : ruby
 BuildRequires : zlib-dev
 
 %description
@@ -50,9 +49,7 @@ Group: Development
 Requires: libsolv-lib = %{version}-%{release}
 Requires: libsolv-bin = %{version}-%{release}
 Requires: libsolv-data = %{version}-%{release}
-Requires: libsolv-man = %{version}-%{release}
 Provides: libsolv-devel = %{version}-%{release}
-Requires: libsolv = %{version}-%{release}
 
 %description dev
 dev components for the libsolv package.
@@ -92,9 +89,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1551155087
+export SOURCE_DATE_EPOCH=1552944735
 mkdir -p clr-build
 pushd clr-build
+export LDFLAGS="${LDFLAGS} -fno-lto"
 %cmake .. -DENABLE_COMPLEX_DEPS=YES \
 -DENABLE_RPMDB=YES \
 -DENABLE_RPMDB_BYRPMHEADER=YES \
@@ -102,11 +100,11 @@ pushd clr-build
 -DENABLE_RPMPKG_LIBRPM=YES \
 -DENABLE_RPMMD=YES \
 -DENABLE_LZMA_COMPRESSION=yes
-make  %{?_smp_mflags}
+make  %{?_smp_mflags} VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1551155087
+export SOURCE_DATE_EPOCH=1552944735
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libsolv
 cp LICENSE.BSD %{buildroot}/usr/share/package-licenses/libsolv/LICENSE.BSD
