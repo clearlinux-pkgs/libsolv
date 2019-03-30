@@ -1,0 +1,1 @@
+make -C clr-build test %{?_smp_mflags:ARGS=%{_smp_mflags}}
