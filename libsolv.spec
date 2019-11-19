@@ -4,7 +4,7 @@
 #
 Name     : libsolv
 Version  : 0.7.4
-Release  : 20
+Release  : 21
 URL      : https://github.com/openSUSE/libsolv/archive/0.7.4/libsolv-0.7.4.tar.gz
 Source0  : https://github.com/openSUSE/libsolv/archive/0.7.4/libsolv-0.7.4.tar.gz
 Summary  : Library for solving packages
@@ -53,6 +53,7 @@ Requires: libsolv-lib = %{version}-%{release}
 Requires: libsolv-bin = %{version}-%{release}
 Requires: libsolv-data = %{version}-%{release}
 Provides: libsolv-devel = %{version}-%{release}
+Requires: libsolv = %{version}-%{release}
 
 %description dev
 dev components for the libsolv package.
@@ -86,16 +87,21 @@ man components for the libsolv package.
 
 %prep
 %setup -q -n libsolv-0.7.4
+cd %{_builddir}/libsolv-0.7.4
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1553906628
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1574186736
 mkdir -p clr-build
 pushd clr-build
-export LDFLAGS="${LDFLAGS} -fno-lto"
+export GCC_IGNORE_WERROR=1
+export CFLAGS="$CFLAGS -fno-lto "
+export FCFLAGS="$CFLAGS -fno-lto "
+export FFLAGS="$CFLAGS -fno-lto "
+export CXXFLAGS="$CXXFLAGS -fno-lto "
 %cmake .. -DENABLE_COMPLEX_DEPS=YES \
 -DENABLE_RPMDB=YES \
 -DENABLE_RPMDB_BYRPMHEADER=YES \
@@ -104,21 +110,21 @@ export LDFLAGS="${LDFLAGS} -fno-lto"
 -DENABLE_RPMMD=YES \
 -DENABLE_LZMA_COMPRESSION=yes \
 -DENABLE_ZCHUNK_COMPRESSION=OFF
-make  %{?_smp_mflags} VERBOSE=1
+make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 make -C clr-build test %{?_smp_mflags:ARGS=%{_smp_mflags}}
 
 %install
-export SOURCE_DATE_EPOCH=1553906628
+export SOURCE_DATE_EPOCH=1574186736
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libsolv
-cp LICENSE.BSD %{buildroot}/usr/share/package-licenses/libsolv/LICENSE.BSD
+cp %{_builddir}/libsolv-0.7.4/LICENSE.BSD %{buildroot}/usr/share/package-licenses/libsolv/b965854f0ddcbff41631dee1f018ba72e2f248ff
 pushd clr-build
 %make_install
 popd
@@ -201,7 +207,7 @@ popd
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/libsolv/LICENSE.BSD
+/usr/share/package-licenses/libsolv/b965854f0ddcbff41631dee1f018ba72e2f248ff
 
 %files man
 %defattr(0644,root,root,0755)
