@@ -4,7 +4,7 @@
 #
 Name     : libsolv
 Version  : 0.7.4
-Release  : 22
+Release  : 23
 URL      : https://github.com/openSUSE/libsolv/archive/0.7.4/libsolv-0.7.4.tar.gz
 Source0  : https://github.com/openSUSE/libsolv/archive/0.7.4/libsolv-0.7.4.tar.gz
 Summary  : Library for solving packages
