@@ -298,6 +298,7 @@ libsolv.so.1:solv_oom
 libsolv.so.1:solv_realloc
 libsolv.so.1:solv_realloc2
 libsolv.so.1:solv_replacebadutf8
+libsolv.so.1:solv_setcloexec
 libsolv.so.1:solv_sort
 libsolv.so.1:solv_strdup
 libsolv.so.1:solv_timems
@@ -326,6 +327,7 @@ libsolv.so.1:solvable_lookup_str_poollang
 libsolv.so.1:solvable_lookup_type
 libsolv.so.1:solvable_lookup_void
 libsolv.so.1:solvable_matchesdep
+libsolv.so.1:solvable_matchessolvable
 libsolv.so.1:solvable_selfprovidedep
 libsolv.so.1:solvable_set_deparray
 libsolv.so.1:solvable_set_id
@@ -447,10 +449,12 @@ libsolvext.so.1:repo_add_updateinfoxml
 libsolvext.so.1:rpm_byfp
 libsolvext.so.1:rpm_byrpmdbid
 libsolvext.so.1:rpm_byrpmh
+libsolvext.so.1:rpm_hash_database_state
 libsolvext.so.1:rpm_installedrpmdbids
 libsolvext.so.1:rpm_iterate_filelist
 libsolvext.so.1:rpm_query
 libsolvext.so.1:rpm_query_num
+libsolvext.so.1:rpm_stat_database
 libsolvext.so.1:rpm_state_create
 libsolvext.so.1:rpm_state_free
 libsolvext.so.1:solv_xfopen
