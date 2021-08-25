@@ -457,6 +457,7 @@ libsolvext.so.1:rpm_query_num
 libsolvext.so.1:rpm_stat_database
 libsolvext.so.1:rpm_state_create
 libsolvext.so.1:rpm_state_free
+libsolvext.so.1:solv_fmemopen
 libsolvext.so.1:solv_xfopen
 libsolvext.so.1:solv_xfopen_buf
 libsolvext.so.1:solv_xfopen_fd
@@ -464,6 +465,7 @@ libsolvext.so.1:solv_xfopen_iscompressed
 libsolvext.so.1:testcase_add_testtags
 libsolvext.so.1:testcase_dep2str
 libsolvext.so.1:testcase_job2str
+libsolvext.so.1:testcase_mangle_repo_names
 libsolvext.so.1:testcase_read
 libsolvext.so.1:testcase_resultdiff
 libsolvext.so.1:testcase_solverresult
