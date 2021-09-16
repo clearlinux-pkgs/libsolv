@@ -4,7 +4,7 @@
 #
 Name     : libsolv
 Version  : 0.7.19
-Release  : 27
+Release  : 28
 URL      : https://github.com/openSUSE/libsolv/archive/0.7.19/libsolv-0.7.19.tar.gz
 Source0  : https://github.com/openSUSE/libsolv/archive/0.7.19/libsolv-0.7.19.tar.gz
 Summary  : Library for solving packages
@@ -97,7 +97,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1630018773
+export SOURCE_DATE_EPOCH=1631764964
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -124,7 +124,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make -C clr-build test %{?_smp_mflags:ARGS=%{_smp_mflags}}
 
 %install
-export SOURCE_DATE_EPOCH=1630018773
+export SOURCE_DATE_EPOCH=1631764964
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libsolv
 cp %{_builddir}/libsolv-0.7.19/LICENSE.BSD %{buildroot}/usr/share/package-licenses/libsolv/b965854f0ddcbff41631dee1f018ba72e2f248ff

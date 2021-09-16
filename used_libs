@@ -1,6 +1,6 @@
 libc.so.6
 libexpat.so.1
 liblzma.so.5
-librpm.so.8
-librpmio.so.8
+librpm.so.9
+librpmio.so.9
 libz.so.1
