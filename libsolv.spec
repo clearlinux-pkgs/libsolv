@@ -4,7 +4,7 @@
 #
 Name     : libsolv
 Version  : 0.7.19
-Release  : 26
+Release  : 27
 URL      : https://github.com/openSUSE/libsolv/archive/0.7.19/libsolv-0.7.19.tar.gz
 Source0  : https://github.com/openSUSE/libsolv/archive/0.7.19/libsolv-0.7.19.tar.gz
 Summary  : Library for solving packages
@@ -22,6 +22,7 @@ BuildRequires : pkgconfig(liblzma)
 BuildRequires : pkgconfig(rpm)
 BuildRequires : popt-dev
 BuildRequires : zlib-dev
+Patch1: 0001-Fix-compatibility-with-Python-3.10.patch
 
 %description
 Libsolv
@@ -89,13 +90,14 @@ man components for the libsolv package.
 %prep
 %setup -q -n libsolv-0.7.19
 cd %{_builddir}/libsolv-0.7.19
+%patch1 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1629915120
+export SOURCE_DATE_EPOCH=1630018773
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -122,7 +124,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make -C clr-build test %{?_smp_mflags:ARGS=%{_smp_mflags}}
 
 %install
-export SOURCE_DATE_EPOCH=1629915120
+export SOURCE_DATE_EPOCH=1630018773
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libsolv
 cp %{_builddir}/libsolv-0.7.19/LICENSE.BSD %{buildroot}/usr/share/package-licenses/libsolv/b965854f0ddcbff41631dee1f018ba72e2f248ff
