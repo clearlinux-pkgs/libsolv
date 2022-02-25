@@ -72,6 +72,7 @@ libsolv.so.1:pool_freeallrepos
 libsolv.so.1:pool_freeidhashes
 libsolv.so.1:pool_freetmpspace
 libsolv.so.1:pool_freewhatprovides
+libsolv.so.1:pool_get_custom_vendorcheck
 libsolv.so.1:pool_get_flag
 libsolv.so.1:pool_get_rootdir
 libsolv.so.1:pool_id2evr
@@ -261,6 +262,7 @@ libsolv.so.1:repowriter_set_keyfilter
 libsolv.so.1:repowriter_set_keyqueue
 libsolv.so.1:repowriter_set_repodatarange
 libsolv.so.1:repowriter_set_solvablerange
+libsolv.so.1:repowriter_set_userdata
 libsolv.so.1:repowriter_write
 libsolv.so.1:selection_add
 libsolv.so.1:selection_filter
@@ -295,6 +297,7 @@ libsolv.so.1:solv_latin1toutf8
 libsolv.so.1:solv_malloc
 libsolv.so.1:solv_malloc2
 libsolv.so.1:solv_oom
+libsolv.so.1:solv_read_userdata
 libsolv.so.1:solv_realloc
 libsolv.so.1:solv_realloc2
 libsolv.so.1:solv_replacebadutf8
