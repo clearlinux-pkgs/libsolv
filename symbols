@@ -436,6 +436,7 @@ libsolv.so.1:transaction_order
 libsolv.so.1:transaction_order_add_choices
 libsolv.so.1:transaction_order_get_cycle
 libsolv.so.1:transaction_order_get_cycleids
+libsolv.so.1:transaction_order_get_edges
 libsolv.so.1:transaction_print
 libsolv.so.1:transaction_type
 libsolvext.so.1:SOLV_1.0
