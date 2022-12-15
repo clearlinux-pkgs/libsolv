@@ -118,6 +118,7 @@ libsolv.so.1:pool_setvendorclasses
 libsolv.so.1:pool_shrink_rels
 libsolv.so.1:pool_shrink_strings
 libsolv.so.1:pool_solvable2str
+libsolv.so.1:pool_solvidset2str
 libsolv.so.1:pool_str2id
 libsolv.so.1:pool_strn2id
 libsolv.so.1:pool_tmpappend
@@ -343,8 +344,11 @@ libsolv.so.1:solvable_trivial_installable_queue
 libsolv.so.1:solvable_trivial_installable_repo
 libsolv.so.1:solvable_unset
 libsolv.so.1:solver_allruleinfos
+libsolv.so.1:solver_allweakdepinfos
 libsolv.so.1:solver_alternative2str
+libsolv.so.1:solver_alternativeinfo
 libsolv.so.1:solver_alternatives_count
+libsolv.so.1:solver_calc_decisioninfo_bits
 libsolv.so.1:solver_calc_duchanges
 libsolv.so.1:solver_calc_installsizechange
 libsolv.so.1:solver_calculate_multiversionmap
@@ -352,6 +356,10 @@ libsolv.so.1:solver_calculate_noobsmap
 libsolv.so.1:solver_create
 libsolv.so.1:solver_create_state_maps
 libsolv.so.1:solver_create_transaction
+libsolv.so.1:solver_decisioninfo2str
+libsolv.so.1:solver_decisionlist_merged
+libsolv.so.1:solver_decisionlist_solvables
+libsolv.so.1:solver_decisionreason2str
 libsolv.so.1:solver_describe_decision
 libsolv.so.1:solver_describe_weakdep_decision
 libsolv.so.1:solver_findallproblemrules
@@ -362,13 +370,17 @@ libsolv.so.1:solver_get_alternative
 libsolv.so.1:solver_get_cleandeps
 libsolv.so.1:solver_get_decisionblock
 libsolv.so.1:solver_get_decisionlevel
+libsolv.so.1:solver_get_decisionlist
+libsolv.so.1:solver_get_decisionlist_multiple
 libsolv.so.1:solver_get_decisionqueue
 libsolv.so.1:solver_get_flag
 libsolv.so.1:solver_get_lastdecisionblocklevel
+libsolv.so.1:solver_get_learnt
 libsolv.so.1:solver_get_orphaned
 libsolv.so.1:solver_get_recommendations
 libsolv.so.1:solver_get_unneeded
 libsolv.so.1:solver_get_userinstalled
+libsolv.so.1:solver_merge_decisioninfo_bits
 libsolv.so.1:solver_next_problem
 libsolv.so.1:solver_next_solution
 libsolv.so.1:solver_next_solutionelement
@@ -389,6 +401,7 @@ libsolv.so.1:solver_printwatches
 libsolv.so.1:solver_problem2str
 libsolv.so.1:solver_problem_count
 libsolv.so.1:solver_problemruleinfo2str
+libsolv.so.1:solver_reason2str
 libsolv.so.1:solver_rule2job
 libsolv.so.1:solver_rule2jobidx
 libsolv.so.1:solver_rule2pkgrule
@@ -397,6 +410,7 @@ libsolv.so.1:solver_rule2solvable
 libsolv.so.1:solver_ruleclass
 libsolv.so.1:solver_rulecmp
 libsolv.so.1:solver_ruleinfo
+libsolv.so.1:solver_ruleinfo2str
 libsolv.so.1:solver_ruleliterals
 libsolv.so.1:solver_select2str
 libsolv.so.1:solver_set_flag
@@ -410,6 +424,7 @@ libsolv.so.1:solver_take_solution
 libsolv.so.1:solver_take_solutionelement
 libsolv.so.1:solver_trivial_installable
 libsolv.so.1:solver_unifyrules
+libsolv.so.1:solver_weakdepinfo
 libsolv.so.1:stringpool_clone
 libsolv.so.1:stringpool_free
 libsolv.so.1:stringpool_freehash
