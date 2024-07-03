@@ -1,6 +1,47 @@
 
 This file contains the major changes between libsolv versions:
 
+Version 0.7.29
+- selected bug fixes:
+  * improve updating of installed multiversion packages
+  * fix decision introspection going into an endless loop in
+    some cases
+- new features:
+  * added experimental lua bindings
+
+Version 0.7.28
+- selected bug fixes:
+  * disable choice rules for Conda
+  * build for multiple python versions on SUSE
+
+Version 0.7.27
+- selected bug fixes:
+  * add zstd support for the installcheck tool
+  * add putinowndirpool cache to make file list handling in
+    repo_write much faster
+
+Version 0.7.26
+- selected bug fixes:
+  * fix evr roundtrip in testcases
+  * do not use deprecated headerUnload with newer rpm versions
+
+Version 0.7.25
+- selected bug fixes:
+  * support complex deps in SOLVABLE_PREREQ_IGNOREINST
+  * fix minimization not prefering installed packages in some cases
+  * reduce memory usage in repo_updateinfoxml
+  * fix lock-step interfering with architecture selection
+  * fix choice rule handing for package downgrades
+  * fix complex dependencies with an "else" part sometimes leading
+    to unsolved dependencies
+
+Version 0.7.24
+- selected bug fixes:
+  * handle learnt rules in solver_alternativeinfo()
+- new features:
+  * support x86_64_v[234] architecture levels
+  * implement decision sorting for package decisionlists
+
 Version 0.7.23
 - selected bug fixes:
   * fix "keep installed" jobs not disabling "best update" rules
