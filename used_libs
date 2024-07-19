@@ -3,3 +3,4 @@ libexpat.so.1
 librpm.so.9
 librpmio.so.9
 libz.so.1
+libzstd.so.1
